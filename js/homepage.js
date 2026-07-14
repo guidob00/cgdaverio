@@ -140,7 +140,7 @@ function aggiornaTabellone() {
    NAV ATTIVA (evidenzia la pagina corrente)
    ========================================================= */
 function evidenziaPaginaCorrente() {
-  const paginaAttuale = window.location.pathname.split("/").pop() || "homepage.html";
+  const paginaAttuale = window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".top-nav-link, .bottom-nav-item").forEach(link => {
     const href = link.getAttribute("href");
