@@ -1,0 +1,121 @@
+/* =========================================================
+   Riusa i design token da homepage.css (caricato prima).
+   ========================================================= */
+
+.page--documenti { padding-top: 20px; }
+
+.documents-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.matches-loading,
+.matches-empty {
+  color: var(--grigio-erba);
+  font-style: italic;
+}
+
+/* =========================================================
+   CARD DOCUMENTO
+   ========================================================= */
+.document-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bianco-puro);
+  border: 1px solid rgba(20,67,46,0.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+}
+
+.document-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bianco-gesso);
+  border: 2px solid var(--oro-stemma);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--verde-pino);
+}
+
+.document-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.document-title {
+  margin: 0 0 3px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--inchiostro);
+  overflow-wrap: break-word;
+}
+
+.document-meta {
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--grigio-erba);
+}
+
+.document-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.document-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bianco-puro);
+  background: var(--verde-pino);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.document-btn:hover,
+.document-btn:focus-visible {
+  background: var(--verde-campo);
+}
+
+.document-btn--scarica {
+  background: var(--verde-campo);
+}
+
+.document-btn--scarica:hover,
+.document-btn--scarica:focus-visible {
+  background: var(--verde-pino);
+}
+
+/* =========================================================
+   BREAKPOINT: DESKTOP / TABLET
+   Stessa struttura, solo scalata più grande (come da schizzo).
+   ========================================================= */
+@media (min-width: 860px) {
+  .documents-container { gap: 20px; }
+
+  .document-card { padding: 24px 28px; gap: 24px; }
+
+  .document-icon { width: 76px; height: 76px; }
+  .document-icon svg { width: 34px; height: 34px; }
+
+  .document-title { font-size: 20px; margin-bottom: 5px; }
+  .document-meta { font-size: 13.5px; margin-bottom: 16px; }
+
+  .document-btn { font-size: 14.5px; padding: 10px 22px; }
+}

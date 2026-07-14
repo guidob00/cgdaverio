@@ -1,0 +1,8 @@
+categoria,giornata,data,ora,indirizzo,squadra_casa,squadra_trasferta,gol_casa,gol_trasferta
+Open,1,2026-09-06,15:30,"Piazza Sannti Paolo e Pietro, 3 - Daverio",aaa,cgd,3,1
+Open,2,2026-09-13,15:30,"Piazza Sannti Paolo e Pietro, 3 - Daverio",cgd,bbb,1,1
+Open,3,2026-09-20,15:30,"Piazza Sannti Paolo e Pietro, 3 - Daverio",cgd,ccc,,
+Open,4,2026-09-27,15:30,"Piazza Sannti Paolo e Pietro, 3 - Daverio",ddd,cgd,,
+Under 12,1,2026-09-07,11:00,"Piazza Sannti Paolo e Pietro, 3 - Daverio",cgd,aaa,2,2
+Under 12,2,2026-09-14,11:00,"Piazza Sannti Paolo e Pietro, 3 - Daverio",bbb,cgd,,
+Under 12,3,2026-09-21,11:00,"Piazza Sannti Paolo e Pietro, 3 - Daverio",cgd,ccc,,

@@ -3,79 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C.G. Daverio | Home</title>
-<meta name="description" content="Sito ufficiale della squadra: news, calendario partite, classifiche e documenti.">
+<title>Classifiche | A.S.D. Calcio Squadra</title>
+<meta name="description" content="Classifiche aggiornate di tutte le squadre della società.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/homepage.css">
+<link rel="stylesheet" href="css/calendario.css">
+<link rel="stylesheet" href="css/classifiche.css">
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER (identico alle altre pagine, nav su "Classifiche") -->
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="homepage.html" aria-label="Torna alla home">
       <span class="brand-crest">
         <img src="imgs/logo.png" alt="Stemma squadra" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="brand-crest-fallback" aria-hidden="true">ASD</span>
       </span>
+      <span class="brand-name">A.S.D. Calcio Squadra</span>
     </a>
 
-    <!-- Tabellone data/ora: visibile su mobile -->
     <div class="scoreboard" id="scoreboard" aria-live="off">
       <span class="scoreboard-date" id="scoreboard-date">--/--/----</span>
       <span class="scoreboard-time" id="scoreboard-time">--:--</span>
     </div>
 
-    <!-- Nav orizzontale: visibile da pc -->
     <nav class="top-nav" aria-label="Navigazione principale">
-      <a href="homepage.html" class="top-nav-link is-active">Home</a>
+      <a href="homepage.html" class="top-nav-link">Home</a>
       <span class="top-nav-sep" aria-hidden="true">|</span>
       <a href="calendario.html" class="top-nav-link">Calendario</a>
       <span class="top-nav-sep" aria-hidden="true">|</span>
-      <a href="classifiche.html" class="top-nav-link">Classifiche</a>
+      <a href="classifiche.html" class="top-nav-link is-active">Classifiche</a>
       <span class="top-nav-sep" aria-hidden="true">|</span>
       <a href="documenti.html" class="top-nav-link">Documenti</a>
     </nav>
   </div>
 </header>
 
-<!-- CONTENUTO -->
-<main class="page">
+<main class="page page--classifiche">
 
-  <section class="section-block" aria-labelledby="news-heading">
-    <div class="section-tag">Ultime</div>
-    <h1 id="news-heading" class="section-title">News della squadra</h1>
+  <h1 class="section-title">Classifiche</h1>
 
-    <div class="news-list" id="news-list">
-      <!-- Le card vengono generate da js/homepage.js -->
-      <p class="news-empty" id="news-empty" hidden>Nessuna news al momento. Torna a trovarci presto.</p>
+  <!-- CONTROLLO: selezione squadra -->
+  <div class="calendar-controls">
+    <div class="dropdown" id="team-dropdown">
+      <button type="button" class="dropdown-btn" id="team-dropdown-btn"
+              aria-haspopup="listbox" aria-expanded="false">
+        <span id="team-dropdown-label">Carico squadre&hellip;</span>
+        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="dropdown-list" id="team-dropdown-list" role="listbox" hidden></ul>
     </div>
-  </section>
+  </div>
 
-  <section class="section-block section-block--muted" aria-labelledby="iniziative-heading">
-    <div class="section-tag section-tag--gold">In corso</div>
-    <h2 id="iniziative-heading" class="section-title">Iniziative</h2>
-    <div class="news-list" id="iniziative-list"></div>
-  </section>
-
-  <section class="section-block" aria-labelledby="risultati-heading">
-    <div class="section-tag section-tag--red">Risultati</div>
-    <h2 id="risultati-heading" class="section-title">Ultimi risultati</h2>
-    <div class="news-list" id="risultati-list"></div>
-  </section>
+  <!-- TABELLA CLASSIFICA -->
+  <div id="standings-container" class="standings-container" aria-live="polite">
+    <p class="matches-loading" id="standings-loading">Caricamento classifica&hellip;</p>
+  </div>
 
 </main>
 
 <footer class="site-footer">
-  <p>&copy; <span id="anno-corrente">2026</span> C.G. Daverio &middot; Tutti i diritti riservati</p>
+  <p>&copy; <span id="anno-corrente">2026</span> A.S.D. Calcio Squadra &middot; Tutti i diritti riservati</p>
 </footer>
 
-<!-- BOTTOM NAV: fissa, solo mobile -->
+<!-- BOTTOM NAV (identica alle altre pagine, "Classifiche" attivo) -->
 <nav class="bottom-nav" aria-label="Navigazione rapida">
-  <a href="homepage.html" class="bottom-nav-item is-active">
+  <a href="homepage.html" class="bottom-nav-item">
     <span class="bottom-nav-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
     </span>
@@ -87,7 +85,7 @@
     </span>
     <span class="bottom-nav-label">Calendario</span>
   </a>
-  <a href="classifiche.html" class="bottom-nav-item">
+  <a href="classifiche.html" class="bottom-nav-item is-active">
     <span class="bottom-nav-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10M12 21V3M20 21v-7"/></svg>
     </span>
@@ -101,6 +99,6 @@
   </a>
 </nav>
 
-<script src="js/homepage.js"></script>
+<script src="js/classifiche.js"></script>
 </body>
 </html>

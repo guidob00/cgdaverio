@@ -1,0 +1,105 @@
+/* =========================================================
+   Riusa i design token da homepage.css e i dropdown da
+   calendario.css (entrambi caricati prima di questo file).
+   ========================================================= */
+
+.page--classifiche { padding-top: 20px; }
+
+.standings-container {
+  background: var(--bianco-puro);
+  border: 1px solid rgba(20,67,46,0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  min-width: 460px;
+}
+
+.standings-table caption {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--bianco-puro);
+  background: var(--verde-pino);
+  padding: 12px 16px;
+}
+
+.standings-table thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--grigio-erba);
+  text-align: center;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--oro-stemma);
+}
+
+.standings-table thead th:first-child,
+.standings-table tbody td:first-child {
+  text-align: center;
+  width: 44px;
+}
+
+.standings-table thead th.col-squadra,
+.standings-table tbody td.col-squadra {
+  text-align: left;
+}
+
+.standings-table tbody td {
+  padding: 11px 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(20,67,46,0.08);
+}
+
+.standings-table tbody tr:last-child td { border-bottom: none; }
+
+.standings-pos {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--verde-pino);
+}
+
+.standings-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.standings-pt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--inchiostro);
+}
+
+.standings-dr.is-positive { color: var(--verde-campo); font-weight: 700; }
+.standings-dr.is-negative { color: var(--rosso-risultato); font-weight: 700; }
+
+/* Riga della nostra squadra, evidenziata */
+.standings-table tbody tr.is-nostra-squadra {
+  background: rgba(228, 179, 67, 0.16);
+}
+
+.standings-table tbody tr.is-nostra-squadra td {
+  font-weight: 700;
+}
+
+.standings-table tbody tr.is-nostra-squadra .standings-pos {
+  color: var(--rosso-risultato);
+}
+
+@media (min-width: 860px) {
+  .standings-table { font-size: 15px; }
+  .standings-table thead th { font-size: 12px; padding: 12px 10px; }
+  .standings-table tbody td { padding: 13px 10px; }
+}
